@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | DataTables</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+        </ul>
+
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="https://shop-cli.herokuapp.com/index.html" class="brand-link">
+            <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">SHOP</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar user (optional) -->
+            <!--        <div class="user-panel mt-3 pb-3 mb-3 d-flex">-->
+            <!--          <div class="image">-->
+            <!--            <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">-->
+            <!--          </div>-->
+            <!--          <div class="info">-->
+            <!--            <a href="#" class="d-block">Alexander Pierce</a>-->
+            <!--          </div>-->
+            <!--        </div>-->
+
+            <!-- SidebarSearch Form -->
+            <div class="form-inline">
+                <div class="input-group" data-widget="sidebar-search">
+                    <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                           aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-sidebar">
+                            <i class="fas fa-search fa-fw"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+                         with font-awesome or any other icon font library -->
+                    <li class="nav-item">
+                        <a href="https://shop-cli.herokuapp.com/index.html" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Dashboard
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://shop-cli.herokuapp.com/pages/products/list.html" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Product
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="https://shop-cli.herokuapp.com/pages/products/list.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>List</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://shop-cli.herokuapp.com/pages/prducts/create.html?" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create New</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>CREATE NEW</h1>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <form action="#" method="post" name="product-edit">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>ID</label>
+                                                <input type="text" name="id" value="" class="form-control"
+                                                       disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <input type="text" name="name" value="" class="form-control"
+                                                       placeholder="Please enter name product">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>Slug</label>
+                                                <input type="text" name="slug" value="" class="form-control"
+                                                       placeholder="Please enter slug">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>Price</label>
+                                                <input type="number" name="price" value="" class="form-control"
+                                                       placeholder="Please enter price">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <input type="text" name="description" value="" class="form-control"
+                                                       placeholder="Please enter description">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                                <label>Detail</label>
+                                                <textarea type="text" name="detail" class="form-control"
+                                                          placeholder="Please enter detail" id="detail"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>Thumbnail</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="text" name="thumbnail" value=""
+                                                               class="form-control" placeholder="Please choose image">
+                                                    </div>
+                                                    <div class="input-group-append" id="upload_widget">
+                                                        <span class="input-group-text">Upload</span>
+                                                    </div>
+                                                </div>
+                                                <img id="preview-image" style="display: none" src="" alt=""
+                                                     class="img-bordered mt-2" width="200px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>Origin</label>
+                                                <input name="origin" class="form-control" type="text"
+                                                       placeholder="Please enter origin">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>Status</label>
+                                                <select name="status" class="form-control">
+                                                    <option value="0">Active</option>
+                                                    <option value="1">Deactive</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <button type="submit" class="btn btn-primary" name="btn-submit">Save
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <div class="float-right d-none d-sm-block">
+            <b>Version</b> 3.2.0
+        </div>
+        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var myWidget = cloudinary.createUploadWidget({
+                cloudName: 'anhson',
+                uploadPreset: 'mku1eljf'
+            }, (error, result) => {
+                if (!error && result && result.event === "success") {
+                    console.log('Done! Here is the image info: ', result.info.secure_url);
+                    document.forms['create-product-form']['thumbnail'].value = result.info.secure_url;
+                    document.getElementById('preview-image').src = result.info.secure_url;
+                    document.getElementById('preview-image').style.display = "block";
+                }
+            }
+        )
+
+        document.getElementById("upload_widget").addEventListener("click", function () {
+            myWidget.open();
+        }, false);
+    })
+</script>
+<script src="../../dist/ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('detail');
+    var data = CKEDITOR.instances.detail.getData();
+</script>
+<script>
+    function getParameterFromUrl(parameterName) {
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        return url.searchParams.get(parameterName);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+            var btnSubmit = document.forms['product-edit']['btn-submit1];
+            var txtId = document.forms['product-edit']['id'];
+            var txtName = document.forms['product-edit']['name'];
+            var txtSlug = document.forms['product-edit']['slug'];
+            var txtDescription = document.forms['product-edit']['description'];
+            var txtDetail = document.forms['product-edit']['detail'];
+            var txtPrice = document.forms['product-edit']['price'];
+            var txtOrigin = document.forms['product-edit']['origin'];
+            var txtThumbnail = document.forms['product-edit']['thumbnail'];
+            var selectStatus = document.forms['product-edit']['status'];
+
+            // load data by id.
+            var id = getParameterFromUrl('id');
+            var xmlHttpRequest = new XMLHttpRequest();
+            xmlHttpRequest.onreadystatechange = function () {
+                if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) {
+                    // du lieu dirge tra ve thanh cong.
+                    var contentText = '';
+                    var element = JSON.parse(xmlHttpRequest.responseText);
+                    txtId.value = element.id;
+                    txtName.value = element.name;
+                    txtSlug.value = element.slug;
+                    txtDescription.value = element.description;
+                    txtDetail.value = element.detail;
+                    txtPrice.value = element.price;
+                    txtOrigin.value = element.origin;
+                    txtThumbnail.value = element.thumbnail();
+                    selectStatus.value = element.status;
+                }
+            }
+            xmlHttpRequest.open('GET', `https://hello-t2010a-springboot.herokuapp.com/api/v1/products/${id}`);
+            xmlHttpRequest.send();
+
+            if (btnSubmit) {
+                btnSubmit.onclick = function (event) {
+                    event.preventDefault();
+                    var id = txtId.value;
+                    var name = txtName.value;
+                    var slug = txtSlug.value;
+                    var description = txtDescription.value;
+                    var detail = txtDetail.value;
+                    var price = txtPrice.value;
+                    var origin = txtOrigin.value;
+                    var status = selectStatus.value;
+                    var obj = {
+                        'id': id,
+                        'name': name,
+                        'slug': slug,
+                        'description': description;
+                        'detail': detail,
+                        'price': price,
+                        'orgin': origin,
+                        'status': status
+                    }
+                    var dataToSend = JSON.stringify(obj);
+                    var xmlHttpRequest = new XMLHttpRequest();
+                    xmlHttpRequest.onreadystatechange = function () {
+                        if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200) {
+                            alert('Action success!');
+                            window.location.href = 'https://demo-shop-t2010a.herokuapp.com/page/products/list.html';
+                        }
+                    }
+                    xmlHttpRequest.open('PUT', `https://hello-t2010a-springboot.herokuapp.com/api/v1/products/${id}`);
+                    xmlHttpRequest.setRequestHeader('Content-Type', 'application/json');
+                    xmlHttpRequest.send(dataToSend);
+                }
+            }
+        }
+    )
+
+</script>
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../../plugins/jszip/jszip.min.js"></script>
+<script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- Page specific script -->
+
+</body>
+</html>
